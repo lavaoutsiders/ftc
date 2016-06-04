@@ -3,108 +3,105 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <link rel="stylesheet"  href="~/CSS/StyleSheet1.css" />  
-    <link rel="stylesheet" href="../CSS/Content/bootstrap.min.css" />
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-     <script src="../CSS/Scripts/bootstrap.js"></script>
+    <title></title>
 
-   <!--  <link rel="stylesheet" href='<%= ResolveUrl("~/CSS/StyleSheet1.css") %>' />
-    <link rel="stylesheet" href='<%= ResolveUrl("~/CSS/Content/bootstrap.min.css") %>' />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/CSS/StyleSheet1.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/CSS/Content/bootstrap.min.css") %>" />
     <script src="<%=ResolveUrl("~/CSS/scripts/jquery.min.js") %>"></script>
     <script src="<%=ResolveUrl("~/CSS/Scripts/bootstrap.min.js") %>"></script>
     <script src="<%=ResolveUrl("~/CSS/Scripts/bootstrap.js") %>"></script>
- -->
 
-    <asp:ContentPlaceHolder id="head" runat="server">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 <body>
-    
 
-    <section class="container " style="background-color:white; ">
 
-    <form id="form1" runat="server"  >  
-     
-         
-         <header>
-             <div class="row ">
-             <div id="heading" >
-                 <img src='<%=ResolveUrl("~/img/logo.png")%>'  class ="col-sm-3" />
-                 <!--      <AnonymousTemplate>
+    <section class="container " style="background-color: white;">
+
+        <form id="form1" runat="server">
+
+
+            <header>
+                <div class="row ">
+                    <div id="heading">
+                        <img src='<%=ResolveUrl("~/img/logo.png")%>' class="col-sm-3" />
+                        <!--      <AnonymousTemplate>
                              <asp:HyperLink ID="HyperLink1" href="/Accout/registratie.aspx" runat="server">Registreren</asp:HyperLink>
-                         </AnonymousTemplate>  2 regel onder moet plaatsen-->  
+                         </AnonymousTemplate>  2 regel onder moet plaatsen-->
 
-                 
-                     <asp:LoginView ID="LoginView1" runat="server">
-                         <LoggedInTemplate>
-                             Welkom, <asp:LoginName ID="LoginName1" runat="server" />
-                         </LoggedInTemplate>
-                     </asp:LoginView>
-                     <asp:LoginStatus ID="Loginstatus1" runat="server" cssclass="instatus1" OnLoggingOut="Loginstatus1_LoggingOut"/>
-                 
-                     
+
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                Welkom,
+                                <asp:LoginName ID="LoginName1" runat="server" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                        <asp:LoginStatus ID="Loginstatus1" runat="server" CssClass="instatus1" OnLoggingOut="Loginstatus1_LoggingOut" />
+
+
+                    </div>
+
                 </div>
+                <div class="row">
+                    <nav class="navbar navbar-inverse" style="padding: 5px">
 
-             </div>
+                        <ul id="menuOnbekend" class=" nav nav-justified" runat="server" visible="false">
+                            <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
+                        </ul>
+
+                        <ul id="menuVerkoper" class=" nav nav-justified" visible="false" runat="server">
+                            <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/bestellingPlaatsen.aspx") %>'>Bestelling plaatsen</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/klantenBeheren.aspx") %>'>Klanten beheren</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/wachtwoordWijziging.aspx") %>'>Wachtwooord wijzigen</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
+                        </ul>
+
+                        <ul id="menuTechnicus" class=" nav nav-justified" visible="false" runat="server">
+                            <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Technicus/bestelling.aspx") %>'>Bestelling</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Technicus/computermodellenBeheren.aspx") %>'>Computermodellen beheren</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/wachtwoordWijziging.aspx") %>'>Wachtwooord wijzigen</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
+
+                        </ul>
+
+                        <ul id="menuBeheerder" class=" nav nav-justified" visible="false" runat="server">
+                            <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Account/registratie.aspx") %>'>Nieuwe gebruiker</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/bestellingPlaatsen.aspx") %>'>Bestelling plaatsen</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/klantenBeheren.aspx") %>'>Klanten beheren</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Technicus/computermodellenBeheren.aspx") %>'>Computermodellen beheren</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/wachtwoordWijziging.aspx") %>'>Wachtwooord wijzigen</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Beheerder/AccountBeheer.aspx") %>'>Leden beheren</a></li>
+                            <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
             <div class="row">
-             <nav class="navbar navbar-inverse" style="padding:5px"  >
-
-                   <ul id="menuOnbekend" class=" nav nav-justified" runat="server" visible="false" >
-                       <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
-                       <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
-                     </ul>
-                    
-                 <ul id="menuVerkoper" class=" nav nav-justified" visible="false" runat="server">
-                     <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/bestellingPlaatsen.aspx") %>'>Bestelling plaatsen</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/klantenBeheren.aspx") %>'>Klanten beheren</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/wachtwoordWijziging.aspx") %>'>Wachtwooord wijzigen</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
-                 </ul>
-
-                 <ul id="menuTechnicus" class=" nav nav-justified" visible="false" runat="server">
-                      <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Technicus/bestelling.aspx") %>'>Bestelling</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Technicus/computermodellenBeheren.aspx") %>'>Computermodellen beheren</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/wachtwoordWijziging.aspx") %>'>Wachtwooord wijzigen</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
-
-                 </ul>
-
-                 <ul id="menuBeheerder" class=" nav nav-justified" visible="false" runat="server">
-                     <li role="presentation"><a href='<%=ResolveUrl("~/home.aspx") %>'>Home</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Account/registratie.aspx") %>'>Nieuwe gebruiker</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/bestellingPlaatsen.aspx") %>'>Bestelling plaatsen</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Verkoper/klantenBeheren.aspx") %>'>Klanten beheren</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Technicus/computermodellenBeheren.aspx") %>'>Computermodellen beheren</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/wachtwoordWijziging.aspx") %>'>Wachtwooord wijzigen</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/Leden/Beheerder/AccountBeheer.aspx") %>'>Leden beheren</a></li>
-                     <li role="presentation"><a href='<%=ResolveUrl("~/about.aspx") %>'>about</a></li>
-                
-                 </ul>
-            </nav>
-         </div>
-       </header>
-     
-    <div class="row">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-        <div class="row">
-        <footer>
-            <div id="copy right" class="col-sm-12 text-center">
-                <p>&copy Rights Reserverd 2016
-                     <br />
-                    powered by FengLin
-                </p>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
-        </footer> 
-        </div>
-    </form>
-            
-        </section>
+            <div class="row">
+                <footer>
+                    <div id="copy right" class="col-sm-12 text-center">
+                        <p>
+                            &copy Rights Reserverd 2016
+                     <br />
+                            powered by FengLin
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </form>
+
+    </section>
 </body>
 </html>

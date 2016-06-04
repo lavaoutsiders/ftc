@@ -17,18 +17,13 @@ Public Class registratie
             Dim strTechnicus As String = "technicus"
             Dim con As MySqlConnection = New MySqlConnection
             Dim cmd As MySqlCommand = New MySqlCommand
-
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("ftcConnectionstring").ToString()
-
             ' email controleren of al bestaat
             Dim intResult As Integer
             Dim strEmailControle As String = "SELECT email FROM technicus WHERE email = '" + email.Value + "' union SELECT email FROM verkoper where email = '" + email.Value + "'"
-
             cmd.Connection = con
             cmd.CommandText = strEmailControle
-
             con.Open()
-
             If cmd.ExecuteScalar = Nothing Then
                 intResult = 0
             Else
