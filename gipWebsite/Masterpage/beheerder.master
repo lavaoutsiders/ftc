@@ -1,0 +1,11 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Masterpage/Site1.Master" AutoEventWireup="false" CodeBehind="beheerder.master.vb" Inherits="gipWebsite.beheerder" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>

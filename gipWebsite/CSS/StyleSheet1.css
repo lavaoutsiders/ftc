@@ -1,0 +1,25 @@
+﻿body {
+background-image: url(../img/achtergrond.png);
+
+}
+
+a
+
+instatus1 {
+    float: right;
+    margin: 10px;
+
+
+
+}
+
+.labelPadding
+{padding:10px;
+
+}
+
+/*om te testen*/
+.height18px{
+    height:30px;
+    background-color:yellowgreen;
+}
